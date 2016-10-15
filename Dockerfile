@@ -7,7 +7,7 @@ RUN rm -rf /etc/nginx/conf.d/*
 
 ADD ./nginx.conf /etc/nginx/
 ADD ./ssl.conf /etc/nginx/conf.d/
-ADD ./http-80.conf /etc/nginx/conf.d/
+ADD ./http.conf /etc/nginx/conf.d/
 
 RUN sed -i 's/access_log.*/access_log \/dev\/stdout;/g' /etc/nginx/nginx.conf; \
     sed -i 's/error_log.*/error_log \/dev\/stdout info;/g' /etc/nginx/nginx.conf; \
