@@ -23,7 +23,7 @@ This repository provides example files for these configurations.
 
 docker run -it -p 80:80 -p 443:443 clamorisse/nginx-ssl-container
 
-### The image for this container is in[DockerHub](https://hub.docker.com/r/clamorisse/nginx-ssl-container/).
+### The image for this container is in [DockerHub](https://hub.docker.com/r/clamorisse/nginx-ssl-container/).
 
 This container is still work in process.
 
