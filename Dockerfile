@@ -1,9 +1,11 @@
 FROM nginx
+MAINTAINER Berenice Cotero <berenice@cotero.org>
+
 
 RUN apt-get update
+RUN rm -rf /etc/nginx/conf.d/*
 
 ADD ./nginx.conf /etc/nginx/
-RUN rm -rf /etc/nginx/conf.d/*
 ADD ./ssl.conf /etc/nginx/conf.d/
 ADD ./http-80.conf /etc/nginx/conf.d/
 
@@ -16,5 +18,5 @@ ADD ./openssl.cnf /opt
 
 RUN chmod 775 opt/gen_cert.sh
 
-ENTRYPOINT ["/opt/gen_cert.sh", "berenice-demo", "brys", "/opt"]
+ENTRYPOINT ["/opt/gen_cert.sh", "demo-app", "demo-company", "/opt"]
 CMD ["nginx"]
